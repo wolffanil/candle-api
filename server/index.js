@@ -15,7 +15,7 @@ const candleRouter = require("./candle/candle.routes");
 dotenv.config();
 const app = express();
 
-// app.enable('trust proxy')
+app.enable("trust proxy");
 
 app.use(
   cors({
@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === "development") {
 
 app.use(mongoSanitize());
 
-// app.use(compression());
+app.use(compression());
 
 app.get("/favicon.ico", (req, res) => {
   res.status(204);
